@@ -39,7 +39,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtxmlpatterns"] = None
         self.runtimeDependencies["qt-libs/qtkeychain"] = None
         if self.options.dynamic.buildVfsWin:
-            self.runtimeDependencies["owncloud/client-plugin-vfs-win"] = None
+            self.runtimeDependencies["evermore/client-plugin-vfs-win"] = None
 
         if self.buildTarget != "master" and self.buildTarget < CraftVersion("2.6"):
             self.runtimeDependencies["libs/qt5/qtwebkit"] = None
@@ -63,7 +63,7 @@ class Package(CMakePackageBase):
         if 'OWNCLOUD_CMAKE_PARAMETERS' in os.environ:
                 self.subinfo.options.configure.args += os.environ['OWNCLOUD_CMAKE_PARAMETERS']
         if self.subinfo.options.dynamic.buildVfsWin:
-            self.win_vfs_plugin = CraftPackageObject.get("owncloud/client-plugin-vfs-win")
+            self.win_vfs_plugin = CraftPackageObject.get("evermore/client-plugin-vfs-win")
             self.subinfo.options.configure.args += f" -DVIRTUAL_FILE_SYSTEM_PLUGINS={self.win_vfs_plugin.instance.sourceDir()}"
 
         if "ENABLE_CRASHREPORTS" in os.environ:
