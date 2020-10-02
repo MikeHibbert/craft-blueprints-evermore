@@ -17,7 +17,7 @@ class subinfo(info.infoclass):
         self.webpage = "https://owncloud.org"
 
     def setDependencies(self):
-        self.buildDependencies["craft/craft-blueprints-owncloud"] = "default"
+        self.buildDependencies["craft/craft-blueprints-evermore"] = "default"
 
 from Package.VirtualPackageBase import *
 
